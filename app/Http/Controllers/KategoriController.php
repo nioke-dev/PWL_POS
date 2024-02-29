@@ -18,7 +18,13 @@ class KategoriController extends Controller
         // DB::table('m_kategori')->insert($data);
         // return 'Insert Data Berhasil';
 
-        $row = DB::table('m_kategori')->where('kategori_kode', 'SNK')->update(['kategori_nama' => 'Camilan']);
-        return 'Update Data Berhasil. Jumlah Data yang Di update : ' . $row . ' baris';
+        // $row = DB::table('m_kategori')->where('kategori_kode', 'SNK')->update(['kategori_nama' => 'Camilan']);
+        // return 'Update Data Berhasil. Jumlah Data yang Di update : ' . $row . ' baris';
+
+        // $row = DB::table('m_kategori')->where('kategori_kode', 'SNK')->delete();
+        // return 'Delete data berhasil. Jumlah data yang dihapus: ' . $row . ' baris';
+
+        $data = DB::table('m_kategori')->get();
+        return view('kategori', ['data' => $data]);
     }
 }
