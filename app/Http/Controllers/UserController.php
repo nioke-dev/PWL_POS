@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LevelModel;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -64,7 +65,7 @@ class UserController extends Controller
         // $user->wasChanged('nama'); //false
         // dd($user->wasChanged(['nama', 'username'])); //true
 
-        $user = UserModel::all();
+        $user = UserModel::with('level')->get();
         return view('user', ['data' => $user]);
     }
     public function tambah()
