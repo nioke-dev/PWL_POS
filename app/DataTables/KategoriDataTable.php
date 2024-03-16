@@ -51,7 +51,9 @@ class KategoriDataTable extends DataTable
                 Button::make('csv'),
                 Button::make('pdf'),
                 Button::make('print'),
-                Button::make('reset'), Button::make('reload')
+                Button::make('reset'),
+                Button::make('reload'),
+                Button::make('add')->text(' + Add')->action('window.location.href = "' . route('category.create') . '"')->className('btn-primary'),
             ]);
     }
 
