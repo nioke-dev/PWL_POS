@@ -26,6 +26,7 @@
                                 <option value="{{ $lvl->level_id }}">{{ $lvl->level_nama }}</option>
                             @endforeach
                         </select>
+
                     </div>
 
                     <div class="form-group">
