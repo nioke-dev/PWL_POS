@@ -328,6 +328,12 @@ return [
             'icon' => 'fas fa-fw fa-folder',
             'label_color' => 'success',
         ],
+        [
+            'text' => 'Manage User',
+            'url' => '/user',
+            'icon' => 'fas fa-fw fa-user',
+            'label_color' => 'success',
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

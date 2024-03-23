@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LevelController;
+use App\Http\Controllers\MUserController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome2');
 });
 
 Route::get('/level', [LevelController::class, 'index']);
@@ -34,6 +35,13 @@ Route::get('/user/hapus/{id}', [UserController::class, 'hapus']);
 Route::get('/kategori', [KategoriController::class, 'index'])->name('manage.category');
 Route::get('/kategori/create', [KategoriController::class, 'create'])->name('category.create');
 Route::post('/kategori', [KategoriController::class, 'store']);
-Route::get('/kategori/edit/{id}', [KategoriController::class, 'edit']);
+Route::get('/kategori/edit/{id}', [KategoriController::class, 'edit'])->name('kategori.edit');
 Route::put('/kategori/{id}', [KategoriController::class, 'update']);
-Route::get('/kategori/delete/{id}', [KategoriController::class, 'delete']);
+Route::get('/kategori/delete/{id}', [KategoriController::class, 'delete'])->name('kategori.delete');
+
+Route::get('/user', [MUserController::class, 'index'])->name('manage.user');
+Route::get('/user/create', [MUserController::class, 'create'])->name('user.create');
+Route::post('/user', [MUserController::class, 'store'])->name('user.store');
+Route::get('/user/edit/{id}', [MUserController::class, 'edit'])->name('user.edit');
+Route::put('/user/{id}', [MUserController::class, 'update']);
+Route::get('/user/delete/{id}', [MUserController::class, 'delete'])->name('user.delete');
