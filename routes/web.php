@@ -3,6 +3,7 @@
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\MUserController;
+use App\Http\Controllers\POSController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,9 +40,7 @@ Route::get('/kategori/edit/{id}', [KategoriController::class, 'edit'])->name('ka
 Route::put('/kategori/{id}', [KategoriController::class, 'update']);
 Route::get('/kategori/delete/{id}', [KategoriController::class, 'delete'])->name('kategori.delete');
 
-Route::get('/user', [MUserController::class, 'index'])->name('manage.user');
-Route::get('/user/create', [MUserController::class, 'create'])->name('user.create');
-Route::post('/user', [MUserController::class, 'store'])->name('user.store');
-Route::get('/user/edit/{id}', [MUserController::class, 'edit'])->name('user.edit');
-Route::put('/user/{id}', [MUserController::class, 'update']);
-Route::get('/user/delete/{id}', [MUserController::class, 'delete'])->name('user.delete');
+Route::resource('m_user', POSController::class);
+
+Route::get('/formUser', [UserController::class, 'formUser']);
+Route::get('/formLevel', [UserController::class, 'formLevel']);

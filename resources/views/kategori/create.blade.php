@@ -27,7 +27,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="kodeKategori">Kode Kategori</label>
-                        <input type="text" class="form-control" id="kodeKategori" name="kodeKategori"
+                        <input type="text" class="form-control" id="kodeKategori" name="kategori_kode"
                             placeholder="Enter Kode Kategori">
                         @error('kodeKategori')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-group">
                         <label for="namaKategori">Nama Kategori</label>
-                        <input type="text" class="form-control" id="namaKategori" name="namaKategori"
+                        <input type="text" class="form-control" id="namaKategori" name="kategori_nama"
                             placeholder="Enter Nama Kategori">
                         @error('namaKategori')
                             <div class="alert alert-danger">{{ $message }}</div>

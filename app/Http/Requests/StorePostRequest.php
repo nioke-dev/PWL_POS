@@ -22,8 +22,8 @@ class StorePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'kodeKategori' => 'required',
-            'namaKategori' => 'required',
+            'kategori_kode' => 'required',
+            'kategori_nama' => 'required',
         ];
     }
 }
