@@ -37,10 +37,10 @@
                         <div class="col-11">
                             @php
                                 // Memotong bagian waktu (HH:MM:SS) dari nilai $stok->stok_tanggal
-                                $tanggalStok = substr($stok->stok_tanggal, 0, 10);
+                                // $tanggalStok = substr($stok->stok_tanggal, 0, 10);
                             @endphp
-                            <input type="date" class="form-control" id="stok_tanggal" name="stok_tanggal"
-                                value="{{ old('stok_tanggal', $tanggalStok) }}" required>
+                            <input type="datetime-local" class="form-control" id="stok_tanggal" name="stok_tanggal"
+                                value="{{ old('stok_tanggal', $stok->stok_tanggal) }}" required>
                             @error('stok_tanggal')
                                 <small class="form-text text-danger">{{ $message }}</small>
                             @enderror

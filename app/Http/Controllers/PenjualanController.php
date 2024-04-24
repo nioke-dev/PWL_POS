@@ -27,8 +27,9 @@ class PenjualanController extends Controller
         $activeMenu = 'penjualan';
 
         $barang = m_barang::all();
+        $penjualan =  t_penjualan::all();
 
-        return view('penjualan.index', ['breadcrumb' => $breadcrumb, 'page' => $page, 'activeMenu' => $activeMenu, 'barang' => $barang]);
+        return view('penjualan.index', ['breadcrumb' => $breadcrumb, 'page' => $page, 'activeMenu' => $activeMenu, 'barang' => $barang, 'penjualan' => $penjualan]);
     }
     public function list(Request $request)
     {
