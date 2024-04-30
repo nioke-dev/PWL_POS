@@ -10,7 +10,7 @@ class KategoriController extends Controller
 {
     public function index()
     {
-        $kategoris = m_kategori::with('barang')->get();
+        $kategoris = m_kategori::all();
 
         return response()->json([
             'status_code' => 200,
@@ -33,8 +33,6 @@ class KategoriController extends Controller
 
     public function show(m_kategori $kategori)
     {
-        $kategori->load('barang');
-
         return response()->json([
             'status_code' => 200,
             'data' => $kategori
@@ -43,10 +41,7 @@ class KategoriController extends Controller
 
     public function update(Request $request, m_kategori $kategori)
     {
-        $kategori->update([
-            'kategori_kode' => $request->kategori_kode,
-            'kategori_nama' => $request->kategori_nama,
-        ]);
+        $kategori->update($request->all());
 
         return response()->json([
             'status_code' => 200,

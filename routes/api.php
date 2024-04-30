@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\BarangController;
+use App\Http\Controllers\Api\KategoriController;
 use App\Http\Controllers\Api\LevelController;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\LogoutController;
