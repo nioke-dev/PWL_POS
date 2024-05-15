@@ -29,7 +29,9 @@ class FileUploadController extends Controller
         // Prepare the URL to display the uploaded image
         $imageUrl = asset('storage/image-uploaded/' . $namafile);
 
+        $namaFile = $request->nama_gambar . "." . $extfile;
+
         // Redirect to a view to display the uploaded image
-        return view('uploaded-image', ['imageUrl' => $imageUrl]);
+        return view('uploaded-image', ['imageUrl' => $imageUrl, 'nama_file' => $namaFile]);
     }
 }

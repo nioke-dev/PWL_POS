@@ -11,7 +11,7 @@
 <body>
 
     <div class="container mt-3">
-        <h2>Uploaded Image</h2>
+        <h2>Gambar Berhasil Di Upload ke <a href="{{ $imageUrl }}">{{ $nama_file }}</a></h2>
         <hr>
 
         <img src="{{ $imageUrl }}" alt="Uploaded Image" width="500px" class="img-fluid">
